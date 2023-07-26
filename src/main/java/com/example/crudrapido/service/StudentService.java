@@ -22,11 +22,19 @@ public class StudentService {
     }
 
 
-    public Optional<Student>  getStudents(Long id){
+    public Optional<Student>  getStudent(Long id){
 
         return studentRepository.findById(id);
     }
 
-    public void saveOrUpdate(Student)
+    public void saveOrUpdate(Student student){
+
+        studentRepository.save(student);
+    }
+
+    public void delete(Long id){
+
+        studentRepository.deleteById(id);
+    }
     
 }
